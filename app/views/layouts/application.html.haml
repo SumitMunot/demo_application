@@ -1,0 +1,17 @@
+!!!
+%html
+  %head
+    %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}
+    %title= content_for?(:title) ? yield(:title) : 'Myapp'
+    %meta{:name => "description", :content => "#{content_for?(:description) ? yield(:description) : 'Myapp'}"}
+    %link{:href=>"//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css", :rel=>"stylesheet"}
+
+    = stylesheet_link_tag "storefront", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "storefront", "data-turbolinks-track" => true
+    = csrf_meta_tags
+  %body
+    %header
+      = render 'layouts/navigation'
+    %main{:role => "main"}
+      = render 'layouts/messages'
+      = yield

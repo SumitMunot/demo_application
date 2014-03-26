@@ -1,0 +1,7 @@
+/* Admin
+ * Bootswatch
+ *= require_self
+ *= require admin/loader
+ *= require admin/bootswatch
+*/
+body{padding-top:60px; }

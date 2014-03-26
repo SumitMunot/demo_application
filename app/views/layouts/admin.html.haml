@@ -1,0 +1,27 @@
+!!!
+%html
+  %head
+    %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}
+    %title= content_for?(:title) ? yield(:title) : 'Myapp'
+    %meta{:name => "description", :content => "#{content_for?(:description) ? yield(:description) : 'Myapp'}"}
+    = stylesheet_link_tag "admin", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "admin", "data-turbolinks-track" => true
+    = csrf_meta_tags
+  %body
+    %header
+      = render 'layouts/navigation'
+    %main{:role => "main"}
+      = render 'layouts/messages'
+    .container
+      .col-lg-2.col-md-2
+        .list-group
+          %a{:href=>"#",:class=>"list-group-item"}
+            Users
+          %a{:href=>"#",:class=>"list-group-item"}
+            Products
+          %a{:href=>"#",:class=>"list-group-item"}
+            Bids
+          %a{:href=>"#",:class=>"list-group-item"}
+            Orders
+      .col-lg-8
+        = yield

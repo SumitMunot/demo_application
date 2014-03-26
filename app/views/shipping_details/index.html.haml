@@ -1,0 +1,33 @@
+%h1 Listing shipping_details
+
+%table
+  %tr
+    %th Full address name
+    %th Address line one
+    %th Address line two
+    %th City town
+    %th State
+    %th Zip
+    %th Country
+    %th User
+    %th
+    %th
+    %th
+
+  - @shipping_details.each do |shipping_detail|
+    %tr
+      %td= shipping_detail.full_address_name
+      %td= shipping_detail.address_line_one
+      %td= shipping_detail.address_line_two
+      %td= shipping_detail.city_town
+      %td= shipping_detail.state
+      %td= shipping_detail.zip
+      %td= shipping_detail.country
+      %td= shipping_detail.user_id
+      %td= link_to 'Show', shipping_detail
+      %td= link_to 'Edit', edit_shipping_detail_path(shipping_detail)
+      %td= link_to 'Destroy', shipping_detail, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Shipping detail', new_shipping_detail_path

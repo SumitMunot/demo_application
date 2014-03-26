@@ -1,0 +1,30 @@
+%p#notice= notice
+
+%p
+  %b Full address name:
+  = @shipping_detail.full_address_name
+%p
+  %b Address line one:
+  = @shipping_detail.address_line_one
+%p
+  %b Address line two:
+  = @shipping_detail.address_line_two
+%p
+  %b City town:
+  = @shipping_detail.city_town
+%p
+  %b State:
+  = @shipping_detail.state
+%p
+  %b Zip:
+  = @shipping_detail.zip
+%p
+  %b Country:
+  = @shipping_detail.country
+%p
+  %b User:
+  = @shipping_detail.user_id
+
+= link_to 'Edit', edit_shipping_detail_path(@shipping_detail)
+\|
+= link_to 'Back', shipping_details_path

@@ -1,0 +1,27 @@
+%h1 Listing card_details
+
+%table
+  %tr
+    %th Name on card
+    %th Card number
+    %th Card expiry date
+    %th Cvv
+    %th User
+    %th
+    %th
+    %th
+
+  - @card_details.each do |card_detail|
+    %tr
+      %td= card_detail.name_on_card
+      %td= card_detail.card_number
+      %td= card_detail.card_expiry_date
+      %td= card_detail.cvv
+      %td= card_detail.user_id
+      %td= link_to 'Show', card_detail
+      %td= link_to 'Edit', edit_card_detail_path(card_detail)
+      %td= link_to 'Destroy', card_detail, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Card detail', new_card_detail_path
